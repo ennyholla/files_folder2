@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<base href="https://cadsofttools.com/">
+<title>ABViewer</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="alternate" hreflang="en" href="https://cadsofttools.com/cadviewer/">
+<link rel="alternate" hreflang="de" href="https://cadsofttools.de/cadviewer/">
+<link rel="alternate" hreflang="fr" href="https://fr.cadsofttools.com/cadviewer/">
+<link rel="alternate" hreflang="ru" href="https://cadsofttools.ru/cadviewer/">
+<link rel="alternate" hreflang="es" href="https://es.cadsofttools.com/cadviewer/">
+<link rel="alternate" hreflang="pt" href="https://br.cadsofttools.com/cadviewer/">
+<link rel="alternate" hreflang="nl" href="https://nl.cadsofttools.com/cadviewer/">
+<link rel="alternate" hreflang="it" href="https://it.cadsofttools.com/cadviewer/">
+<link rel="alternate" hreflang="ja" href="https://jp.cadsofttools.com/cadviewer/">
+<link rel="alternate" hreflang="ko" href="https://kr.cadsofttools.com/cadviewer/">
+<link rel="alternate" hreflang="zh-Hans" href="https://cn.cadsofttools.com/cadviewer/">
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link href="styles-min.css" type="text/css" rel="stylesheet">
+<link href="jqueryformstyler-master/jquery.formstyler.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="lightbox/css/jquery.lightbox-0.5.css" media="screen">
+<link rel="stylesheet" type="text/css" href="slick-master/slick.css">
+<link rel="stylesheet" type="text/css" href="slick-master/slick-theme.css">
+<style type="text/css">
+  html, body {
+    margin: 0;
+    padding: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .slider {
+        width: 910px;
+        margin: 50px 25px;
+    }
+
+    .slick-slide {
+      margin: 0px 20px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: black;
+    }
+
+
+    .slick-slide {
+      transition: all ease-in-out .3s;
+      opacity: .2;
+	  height:100%;
+	  float:left;
+	  min-height:1px;
+    }
+    
+    .slick-active {
+      opacity: .5;
+    }
+
+    .slick-current {
+      opacity: 1;
+    }	
+</style>
+<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="shSelection.js"></script>
+<script type="text/javascript" src="lightbox/js/jquery.lightbox-0.5.js"></script>
+<script type="text/javascript" src="jqueryformstyler-master/jquery.formstyler.min.js"></script>
+<script type="text/javascript" src="slick-master/slick.js"></script>
+
+<script type="text/javascript">
+  $(document).on('ready', function() {
+      $('.slider-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.slider-nav'
+      });	  
+      $('.slider-nav').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for',
+        dots: false,
+        centerMode: true,
+        focusOnSelect: true,
+      });
+      $('.center').slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+      });	  
+  });	  
+</script>
+
+<script>
+(function($) {
+$(function() {
+$('#cadlang').styler();
+});
+})(jQuery);
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+$(".wrap_table_open").hide();
+$(".open").click(function(){
+$(this).next().slideToggle();
+});
+});
+</script>
+
+<script type="text/javascript">
+$(function() {
+$('.lb').lightBox();
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {  
+  $('ul.tabs').each(function() {
+    $(this).find('li').each(function(i) {
+      $(this).click(function() {
+        $(this).addClass('active').siblings().removeClass('active');
+        var p = $(this).parents('div.tabs_container');
+        p.find('div.tab_container').hide();
+        p.find('div.tab_container:eq(' + i + ')').show();
+      });
+    });
+  });
+})
+</script>
+
+<script type="text/javascript">
+var imgs = ["images/clients/pg.png","images/clients/samsung.png","images/clients/shell.png","images/clients/swisscom.png","images/clients/lg.png","images/clients/siemens.png","images/clients/hitachi.png","images/clients/gazprom.png","images/clients/emerson.png","images/clients/boeing.png"];
+/*var text = ['Картинка 1','<a href="index.php">Картинка 2</a>',
+            '<font color="red">Картинка 3</font>','Картинка 4'];*/
+var n=0;
+time=250;
+play=setInterval("chgImg(0)", 5000);
+
+function chgImg(number) {
+if (number!=0) n=number-2;
+ $('#slide_show').fadeOut(time, function() {    //для картинок
+  $(this).attr('src', imgs[n]).fadeIn(time);
+ });
+
+ $('#slide_text').fadeOut(time, function() {    //для текста
+  $(this).html(text[n]).fadeIn(time);
+ });
+
+n++;
+if (n>=imgs.length) n=0;
+}
+</script>
+
+<img src="https://cadsofttools.com/assets/setcookie.php?lang=en" style="display:none;" /><img src="https://cadsofttools.ru/assets/setcookie.php?lang=en" style="display:none;" /><img src="https://cadsofttools.de/assets/setcookie.php?lang=en" style="display:none;" /><img src="https://nl.cadsofttools.com/assets/setcookie.php?lang=en" style="display:none;" /><img src="https://fr.cadsofttools.com/assets/setcookie.php?lang=en" style="display:none;" /><img src="https://es.cadsofttools.com/assets/setcookie.php?lang=en" style="display:none;" /><img src="https://it.cadsofttools.com/assets/setcookie.php?lang=en" style="display:none;" /><img src="https://br.cadsofttools.com/assets/setcookie.php?lang=en" style="display:none;" /><img src="https://kr.cadsofttools.com/assets/setcookie.php?lang=en" style="display:none;" /><img src="https://jp.cadsofttools.com/assets/setcookie.php?lang=en" style="display:none;" /><img src="https://cn.cadsofttools.com/assets/setcookie.php?lang=en" style="display:none;" />
+<!--  -->
+<!-- BEGIN GoogleAnalytics CODE -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-3486453-1', 'auto', {'allowLinker': true});
+  ga('require', 'linker');
+  ga('linker:autoLink', ['shareit.com'], false, true);
+  ga('send', 'pageview');
+
+</script>
+<!-- END GoogleAnalytics CODE -->
+</head>
+
+<body>
+<div id="center">
+	<div id="header">
+		<a href="/" style="display:inline-block; float: left;"><img src="img/logo.png" alt=""></a>
+		<div id="head-div">
+		<div style="font-family:Verdana; margin-right: 35px; font-weight: bold;">
+			<img style="margin-bottom:-7px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQ2NDhEM0Y2M0Y2ODExRTVCNkREQ0UzNzRDQUE1MDAzIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjQ2NDhEM0Y3M0Y2ODExRTVCNkREQ0UzNzRDQUE1MDAzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NDY0OEQzRjQzRjY4MTFFNUI2RERDRTM3NENBQTUwMDMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NDY0OEQzRjUzRjY4MTFFNUI2RERDRTM3NENBQTUwMDMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4j0DT/AAABRElEQVR42mL8//8/Ay0B4/CzgHcTmOIG4iAg7gHiKiCeS6yBn/0IW8APpM4DsSwQvwdidiDmJ9cCJixqdgOxIlRuDxDzAbEPuUGEzQIDJDkRIH4MxNOoacExJLYtEN+HBpcFtSw4i8T+B8QPgTgEiG9Ty4JdSOxtQBwHxGuB+C21LNgLSgxQticQC1OSD7BZ8AeIl0PZoPywk9oWgEAXEtsYiGupbcFdIJ6BxG8C4jBqWgAC+WgRuxKIPdDU1ABxBLkW/AJiBzSx7Ug+4QHiNGh8zSXHAhC4gsXVIJ/kAPF6aN6YAMShQHwHiL2ILU3RgTHUQFksctehSRtUzHEDCzsRUnyAnLu1gHghFjlNqI9AhWI0qUGEDL4AcQIQ20BzODq4DS2JybYABo4CsTcQWwHxPGhhOBWIzaBl13Cvk6kNAAIMALGcVRqkB2BiAAAAAElFTkSuQmCC"/>
++1 800 469-9789</div>
+		<div style="margin-right: 50px;">
+			<img style="margin:0px 4px -7px 0px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQyMDY0M0RFM0Y2ODExRTU4NzIwOUIyNDI5RTRFMTFDIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjQyMDY0M0RGM0Y2ODExRTU4NzIwOUIyNDI5RTRFMTFDIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NDIwNjQzREMzRjY4MTFFNTg3MjA5QjI0MjlFNEUxMUMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NDIwNjQzREQzRjY4MTFFNTg3MjA5QjI0MjlFNEUxMUMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7lUlg3AAAApklEQVR42uyVUQqAMAxDl+KvV/OwXs0DVBGFWuaabYo/BgQ/Zt7apghVTW9K0sv6AaGG82Wc06PTXqaEC8AInd5aahH8gQZzZFuUgWArk9bRYrBD3iHbR13mWYC5NQXx5r5quUkABYnMi3sQQRjzuyFfIMbIQ6gwSEV/4R5qTtKSjJrEDa3DM2ctBGGKasyZMEhp1dlN9pCoRerK7xL+f/LngFWAAQDDtEa0q/E+GAAAAABJRU5ErkJggg=="/><a href="mailto:info@cadsofttools.com" style="color: #717171; ">info@cadsofttools.com</a></div>
+		<div style="margin-right:10px;">Your language</div>
+<select onchange="javascript:location.href = this.value;" id="cadlang"><option class="lang-en" selected="selected">English</option><option class="lang-de" value="https://cadsofttools.de/cadviewer/">Deutsch</option><option class="lang-fr" value="https://fr.cadsofttools.com/cadviewer/">Français</option><option class="lang-ru" value="https://cadsofttools.ru/cadviewer/">Pусский</option><option class="lang-ja" value="https://jp.cadsofttools.com/cadviewer/">日本語</option><option class="lang-es" value="https://es.cadsofttools.com/cadviewer/">Español</option><option class="lang-it" value="https://it.cadsofttools.com/cadviewer/">Italiano</option><option class="lang-ko" value="https://kr.cadsofttools.com/cadviewer/">한국어</option><option class="lang-nl" value="https://nl.cadsofttools.com/cadviewer/">Nederlands</option><option class="lang-br" value="https://br.cadsofttools.com/cadviewer/">Português</option><option class="lang-cn" value="https://cn.cadsofttools.com/cadviewer/">中国</option></select>		
+	</div>
+
+	</div>
+<div id="content" style="margin:60px 20px 20px">
+    <div style="float: left; margin-right: 50px;"> 
+<h1 class="lp-h1">ABViewer<br /><span style="font-size: 21px;">Everything you need to work with CAD files</span></h1>
+<div><a class="lp-blue-button" onclick="ga('send', 'event', 'ABViewer download', 'click 32bit lp'); return true;" href="download/abviewer.zip">START MY FREE TRIAL</a></div>
+<div><a class="lp-white-button" href="products/abviewer/">Learn more</a></div>
+</div>
+<div style="display: inline-block;"><img src="images/landing-page/laptop.png" alt="" width="450px" height="270px" /></div>
+<div style="margin-bottom: 65px; margin-top: 25px; font-size: 20px; color: #424242;">
+<div style="display: inline-block;"><img src="images/landing-page/checkmark.png" alt="" width="30px" height="30px" />Perpetual Licenses</div>
+<div style="display: inline-block; margin: 0px 136px;"><img src="images/landing-page/checkmark.png" alt="" width="30px" height="30px" />Favorable Price</div>
+<div style="display: inline-block;"><img src="images/landing-page/checkmark.png" alt="" width="30px" height="30px" />Prompt Customer Support</div>
+</div>
+<h2 class="lp-h2">ABViewer Main Features</h2>
+<div class="lp-features">
+<div style="float: left;"><img src="images/landing-page/support.png" alt="" width="50px" height="50px" /><span style="margin-right: 25px;"><strong>Support of 2D and 3D formats</strong><br />Open more than 60 popular formats, including <strong>DWG</strong>, <strong>DXF</strong>, <strong>HPGL</strong>, <strong>IGES</strong>, <strong>STEP</strong>, <strong>STL</strong>, <strong>CGM</strong>, <strong>SVG</strong>.</span></div>
+<div><img src="images/landing-page/pdftodwg.png" alt="" width="50px" height="50px" /><span><strong>PDF to DWG conversion</strong> <br />Convert <strong>PDF</strong> data to editable AutoCAD <strong>DWG</strong> entities with a few clicks.</span></div>
+<div style="float: left;"><img src="images/landing-page/laser.png" alt="" width="50px" height="50px" /><span style="margin-right: 25px;"><strong>G-code generation from DWG/DXF</strong><br />Convert <strong>DWG</strong> and <strong>DXF</strong> file formats to <strong>G-code</strong> for <strong>CNC</strong> machines within seconds.</span></div>
+<div><img src="images/landing-page/editor.png" alt="" width="50px" height="50px" /><span><strong>Professional editor</strong> <br />Work with layers, blocks, dimension and text styles, snaps, external references, etc.</span></div>
+</div>
+<h2 class="lp-h2">Screenshot Gallery</h2>
+<div class="slider slider-for">
+<div><img title="3D viewing" src="images/landing-page/abv/3d-en.png" alt="" width="870px" height="606px" /></div>
+<div><img title="3D measuring" src="images/landing-page/abv/measure-en.png" alt="" width="870px" height="606px" /></div>
+<div><img title="Block creation" src="images/landing-page/abv/edit-en.png" alt="" width="870px" height="606px" /></div>
+<div><img title="G-code generation" src="images/landing-page/abv/gcode-en.png" alt="" width="870px" height="606px" /></div>
+<div><img title="PDF to DWG conversion" src="images/landing-page/abv/pdftodwg-en.png" alt="" width="870px" height="606px" /></div>
+</div>
+<div class="slider slider-nav">
+<div><img src="images/landing-page/abv/3d-en-mini.png" alt="" width="163px" height="113px" /></div>
+<div><img src="images/landing-page/abv/measure-en-mini.png" alt="" width="163px" height="113px" /></div>
+<div><img src="images/landing-page/abv/edit-en-mini.png" alt="" width="163px" height="113px" /></div>
+<div><img src="images/landing-page/abv/gcode-en-mini.png" alt="" width="163px" height="113px" /></div>
+<div><img src="images/landing-page/abv/pdftodwg-en-mini.png" alt="" width="163px" height="113px" /></div>
+</div>
+<h2 class="lp-h2">What Our Users Say</h2>
+<div class="lp-feedback">
+<div style="float: left; padding-right: 25px;"><img src="images/landing-page/quote1.png" alt="" width="16px" height="16px" /><span>I’m one 100% happy with the software! Now it is extremely easy to print and edit DWG files. Printing has never been more convenient! A great product, that’s the way to go!</span><img src="images/landing-page/quote2.png" alt="" width="16px" height="16px" /><br /><em>Stanislav Suhorukov, Russia</em></div>
+<div><img src="images/landing-page/quote1.png" alt="" width="16px" height="16px" /><span>It doesn't often happen in my daily work as system administrator that users give me positive feedback about software. However, ABViewer is worthy to be praised.</span><img src="images/landing-page/quote2.png" alt="" width="16px" height="16px" /><br /><em>Christian Schweitzer, Germany</em></div>
+<div style="float: left; padding-right: 25px;"><img src="images/landing-page/quote1.png" alt="" width="16px" height="16px" /><span>The program has an excellent price-performance ratio and is easy to use even for people who don't usually create CAD projects.</span><img src="images/landing-page/quote2.png" alt="" width="16px" height="16px" /><br /><em>Hartmut Schmitz, Germany</em></div>
+<div><img src="images/landing-page/quote1.png" alt="" width="16px" height="16px" /><span>I'm very pleased with the computer program called ABViewer. I can recommend it to people who view, for example, building plans or deal with them and print them in .plt-format.</span><img src="images/landing-page/quote2.png" alt="" width="16px" height="16px" /><br /><em>Pekka Ratilainen, Finland</em></div>
+</div>
+<div style="text-align: center;"><a class="lp-blue-button" onclick="ga('send', 'event', 'ABViewer download', 'click 32bit lp'); return true;" href="download/abviewer.zip">START MY FREE TRIAL</a></div>
+<div class="center slider">
+<div><img src="images/clients/pg.png" alt="" /></div>
+<div><img src="images/clients/samsung.png" alt="" /></div>
+<div><img src="images/clients/shell.png" alt="" /></div>
+<div><img src="images/clients/swisscom.png" alt="" /></div>
+<div><img src="images/clients/lg.png" alt="" /></div>
+<div><img src="images/clients/siemens.png" alt="" /></div>
+<div><img src="images/clients/hitachi.png" alt="" /></div>
+<div><img src="images/clients/gazprom.png" alt="" /></div>
+<div><img src="images/clients/emerson.png" alt="" /></div>
+<div><img src="images/clients/boeing.png" alt="" /></div>
+</div>
+</div>
+</div>
+<div id="footer">
+	<div id="menu-footer">
+        <div style="display:inline-block;">
+        	<div class="menu-footer">
+				<p>Applications</p>
+				<a href="products/abviewer/">ABViewer</a><br>
+				<a href="products/inventory/">Inventory</a><br>
+				<a href="products/evacuation-plan/">Evacuation</a><br>
+			</div>
+			<div class="menu-footer">
+				<p>Web applications</p>
+				<a href="http://sharecad.org">ShareCAD</a><br>
+				<a href="products/web-cad-sdk/">Web CAD SDK</a><br>
+				<a href="pdf-to-dwg-online/">PDF to DWG Converter</a><br>
+			</div>
+			<div class="menu-footer">
+				<p>SDK Library</p>
+				<a href="products/cad-vcl-enterprise/">CAD VCL</a><br>
+				<a href="products/cad-net/">CAD .NET</a><br>
+				<a href="products/cad-dll/">CAD DLL</a><br>				
+				<a href="products/cadeditorx/">CADEditorX</a><br>
+				<a href="products/cadviewx/">CADViewX</a><br>
+				<a href="products/dxf-export-java/">DXF Export Java</a><br>
+			</div>
+			<div class="menu-footer">
+				<p>Plugins</p>
+				<a href="products/plugins-for-3d-party-programs/">All plugins</a><br>
+				<a href="products/cad-view-plugin-for-total-commander/">CAD View Plugin</a><br>
+			</div>
+			<div class="menu-footer">
+				<p>Company</p>
+				<a href="company/about/">About</a><br>
+				<a href="company/contacts/">Contact us</a><br>
+				<a href="company/news/">News</a><br>
+				<a href="documents/copyrights/">Copyrights</a><br>
+				<a href="documents/privacy-policy/">Privacy policy</a><br>
+				<a href="support/">Support</a><br>
+			</div>
+			<div class="menu-footer" style="margin-right: 0px;">
+				<p>More</p>
+				<a href="http://www.pltviewer.com/">PLT Viewer</a><br>
+				<a href="http://3d-viewers.com/step-viewer.html">STEP Viewer</a><br>
+				<a href="http://3d-viewers.com/iges-viewer.html">IGES Viewer</a><br>
+				<a href="license-agreements/">EULA</a><br>
+			</div>				
+		</div>
+		<div style="padding-top:50px; font-size:12px; color:#ececec">© 2001-2018 CADSoftTools®. All rights reserved.</div>
+	</div>
+</div>
+
+<!-- BEGIN JIVOSITE CODE {literal} -->
+<script type='text/javascript'>
+(function(){ var widget_id = 'ToSurWDZl5';
+var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);})();</script>
+<!-- {/literal} END JIVOSITE CODE -->
+
+<script>
+	var timerId = setInterval(function() {
+        var lce = document.getElementById("livechat-full");
+		if (document.getElementById("jivo_chat_widget_offline")){
+			var elm = document.getElementById("jivo_top_wrap");
+			if (elm) {
+				$(elm).css("display", "none");
+				clearInterval(timerId);
+			}
+			if (lce)
+				$(lce).css("display", "block");
+		} else {
+			if (lce) {
+				$(lce).css("display", "none");
+			    //console.log("lce hide");
+				//clearInterval(timerId);
+			}
+		}
+	}, 100);
+</script>
+
+<!-- BEGIN YandexMetrika CODE -->
+
+<script type="text/javascript">
+   var yaParams = {DOWNLOAD_DLL: ""};
+</script>
+
+<!-- END YandexMetrika CODE -->
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter24836738 = new Ya.Metrika({id:24836738,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/24836738" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<!-- Код тега ремаркетинга Google -->
+<!--
+С помощью тега ремаркетинга запрещается собирать информацию, по которой можно идентифицировать личность пользователя. Также запрещается размещать тег на страницах с контентом деликатного характера. Подробнее об этих требованиях и о настройке тега читайте на странице http://google.com/ads/remarketingsetup.
+-->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1062291984;
+var google_conversion_label = "o-oyCPj-wQQQkJTF-gM";
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1062291984/?value=0&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+<script type="text/javascript" src="cookies.js"></script>
+
+<script type="text/javascript">
+    if (!getCookie('user_cookie_consent')) {
+        cookies.style.display = 'block';
+    }
+    
+    function onCookieAgree() {
+        cookies.style.display = 'none';
+        setCookie('user_cookie_consent', 1, {expires: 2147483647, path: '/'})
+    }
+</script>
+</body>
+</html>
